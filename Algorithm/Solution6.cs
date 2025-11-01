@@ -2,6 +2,7 @@
 
 namespace Algorithm;
 
+// https://leetcode.cn/problems/zigzag-conversion/description/
 public class Solution6
 {
     public string Convert(string s, int numRows)

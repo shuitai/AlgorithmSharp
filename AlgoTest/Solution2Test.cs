@@ -36,8 +36,8 @@ public class Solution2Test
     [Test]
     public void Test3()
     {
-        var l1 = new ListNode(0);
-        var l2 = new ListNode(0);
+        var l1 = new ListNode();
+        var l2 = new ListNode();
         var solution = new Solution2();
         var result = solution.AddTwoNumbers(l1, l2);
         Assert.That(result.val, Is.EqualTo(0));
