@@ -36,6 +36,6 @@ public class Solution1Test
         int[] nums = [1,1,1,1,1,4,1,1,1,1,1,7,1,1,1,1,1];
         var target = 11;
         var result = solution.TwoSum(nums, target);
-        Assert.That(result, Is.EqualTo(new[] { 0, 1 }));
+        Assert.That(result, Is.EqualTo(new[] { 5, 11 }));
     }
 }

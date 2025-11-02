@@ -15,12 +15,12 @@ public class Solution6Test
         var solution = new Solution6();
         var s = "PAYPALISHIRING";
         var numRows = 3;
-        var result = solution.Convert(s, numRows);
+        var result = solution.Convert2(s, numRows);
         Assert.That(result, Is.EqualTo("PAHNAPLSIIGYIR"));
         
         s = "PAYPALISHIRING";
         numRows = 4;
-        result = solution.Convert(s, numRows);
+        result = solution.Convert2(s, numRows);
         Assert.That(result, Is.EqualTo("PINALSIGYAHRPI"));
     }
 
