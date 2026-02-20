@@ -1,4 +1,5 @@
 ﻿using Algorithm;
+using Algorithm.Common;
 
 namespace AlgoTest;
 
