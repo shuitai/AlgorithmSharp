@@ -1,6 +1,6 @@
-﻿using Algorithm;
+﻿using Algorithm.SlideWindow;
 
-namespace AlgoTest;
+namespace AlgoTest.SlideWindow;
 
 public class Solution3Test
 {

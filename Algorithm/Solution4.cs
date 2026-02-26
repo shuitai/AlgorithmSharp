@@ -26,12 +26,12 @@ public class Solution4
 
         if (i < nums1.Length)
         {
-            Array.Copy(nums1, i, result, c, nums1.Length - i);
+            System.Array.Copy(nums1, i, result, c, nums1.Length - i);
         }
 
         if (j < nums2.Length)
         {
-            Array.Copy(nums2, j, result, c, nums2.Length - j);
+            System.Array.Copy(nums2, j, result, c, nums2.Length - j);
         }
         
         if (totalLength % 2 == 0)

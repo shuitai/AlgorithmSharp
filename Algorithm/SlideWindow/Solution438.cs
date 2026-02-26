@@ -1,13 +1,18 @@
 namespace Algorithm.SlideWindow;
 
-// https://leetcode.cn/problems/minimum-window-substring/description/
-public class Solution76
+// https://leetcode.cn/problems/permutation-in-string/description/
+public class Solution438
 {
-    public string MinWindow(string s, string t) {
+    public IList<int> FindAnagrams(string s, string p)
+    {
+        var result = new List<int>();
+        var left = 0;
+        var right = 0;
+        var valid = 0;
         var window = new Dictionary<char, int>();
         var need = new Dictionary<char, int>();
-        
-        foreach (var c in t)
+
+        foreach (var c in p)
         {
             if (!need.ContainsKey(c))
             {
@@ -15,41 +20,37 @@ public class Solution76
             }
             need[c]++;
         }
-        
-        int left = 0, right = 0;
-        var valid = 0;
-        int start = 0;
-        int len = Int32.MaxValue;
-        
+
         // 1. when to expand the window
         while (right < s.Length)
         {
-            var c = s[right];
+            var curr = s[right];
             right++;
 
-            if (need.ContainsKey(c))
+            if (need.ContainsKey(curr))
             {
-                window[c] = window.GetValueOrDefault(c, 0) + 1;
-                if (window[c] == need[c])
+                window[curr] = window.GetValueOrDefault(curr, 0) + 1;
+                if (need[curr] == window[curr])
                 {
                     valid++;
                 }
             }
 
             // 2. when to shrink the window
-            while (valid == need.Count)
+            if (right - left >= p.Length)
             {
-                // 3. record the result startPos and length
-                if (right - left < len) {
-                    start = left;
-                    len = right - left;
+                // 3. when to update the result
+                if (valid == need.Count)
+                {
+                    result.Add(left);
                 }
-                
+
                 var leftChar = s[left];
                 left++;
+
                 if (need.ContainsKey(leftChar))
                 {
-                    if (window[leftChar] == need[leftChar])
+                    if (need[leftChar] == window[leftChar])
                     {
                         valid--;
                     }
@@ -58,6 +59,6 @@ public class Solution76
             }
         }
 
-        return len != Int32.MaxValue ? s.Substring(start, len) : "";
+        return result;
     }
 }
